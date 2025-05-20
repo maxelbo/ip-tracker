@@ -1,0 +1,226 @@
+:root {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --accent-color: #3498db;
+  --accent-hover: #2980b9;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-color: #dee2e6;
+  --code-bg: #2c3e50;
+  --code-color: #2ecc71;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #252525;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --accent-color: #4ab5d3;
+  --accent-hover: #4fa8d1;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.089);
+  --success-color: #2ecc71;
+  --error-color: #ff6b6b;
+  --border-color: #333333;
+  --code-bg: #0a0a0a;
+  --code-color: #2ecc71;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+header {
+  background-color: var(--bg-secondary);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: var(--card-shadow);
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--bg-tertiary);
+  border: none;
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--border-color);
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+h2 {
+  color: var(--accent-color);
+  margin-top: 0;
+}
+
+.ip-display {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  text-align: center;
+  margin: 1rem 0;
+  word-break: break-all;
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.loading {
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.geo-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.geo-item {
+  background-color: var(--bg-tertiary);
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.geo-item h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.geo-item p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.binary-display {
+  font-family: monospace;
+  padding: 1rem;
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  border-radius: 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 1rem;
+}
+
+.copy-btn {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.copy-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.connection-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.system-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.info-card {
+  background-color: var(--bg-tertiary);
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.info-card h4 {
+  margin-top: 0;
+  color: var(--accent-color);
+}
+
+.info-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s;
+}
+
+.error-message {
+  color: var(--error-color);
+}
+
+.small-font {
+  font-size: 0.7em;
+}

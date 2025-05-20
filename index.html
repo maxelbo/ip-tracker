@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IP Address Checker</title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>IP Address Checker</h1>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌓</button>
+    </header>
+
+    <div class="card fade-in">
+      <h2>Your Public IP Address</h2>
+      <div id="ip-address" class="ip-display">
+        <span class="loading">Loading...</span>
+      </div>
+
+      <div style="text-align: center;">
+        <button id="copy-ip" class="copy-btn" onclick="copyIP()">Copy IP Address</button>
+        <div id="copy-message" style="margin-top: 0.5rem; display: none; color: var(--success-color);">Copied to
+          clipboard!</div>
+      </div>
+
+      <div id="binary-ip" class="binary-display">Loading binary representation...</div>
+    </div>
+
+    <div class="card fade-in" id="geo-card">
+      <h2>Geolocation Information</h2>
+      <div id="geo-info" class="geo-info">
+        <div class="loading">Loading location data...</div>
+      </div>
+    </div>
+
+    <div class="card fade-in">
+      <h2>Connection Information</h2>
+      <div class="connection-info">
+        <div class="info-card">
+          <h4>Protocol</h4>
+          <div class="info-value" id="ip-version">-</div>
+        </div>
+        <div class="info-card">
+          <h4>Device Type</h4>
+          <div class="info-value" id="user-agent">-</div>
+        </div>
+        <div class="info-card">
+          <h4>Screen Size</h4>
+          <div class="info-value" id="screen-info">-</div>
+        </div>
+      </div>
+
+      <h2 style="margin-top: 2rem;">System Information</h2>
+      <div class="system-info">
+        <div class="info-card">
+          <h4>Operating System</h4>
+          <div class="info-value" id="os-info">Detecting...</div>
+        </div>
+        <div class="info-card">
+          <h4>OS Version</h4>
+          <div class="info-value" id="os-version">Detecting...</div>
+        </div>
+        <div class="info-card">
+          <h4>Architecture</h4>
+          <div class="info-value" id="os-arch">Detecting...</div>
+        </div>
+        <div class="info-card">
+          <h4>Browser</h4>
+          <div class="info-value" id="browser-info">Detecting...</div>
+        </div>
+        <div class="info-card">
+          <h4>Browser Version</h4>
+          <div class="info-value" id="browser-version">Detecting...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/scripts/ip.js"></script>
+  <script src="/scripts/theme.js"></script>
+</body>
+
+</html>
